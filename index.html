@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Capsule - Video Diary App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="app-title">✨ Memories Captured ✨</h1>
+        <p class="app-subtitle">Your cute video diary adventure!</p>
+        <div class="streak-counter">
+            Day Streak: <span id="streakCount">0</span> 🔥
+        </div>
+    </header>
+
+    <main>
+        <div class="recording-container">
+            <div class="prompt-section">
+                <h2>Today's Prompt 💭</h2>
+                <p id="promptText" class="prompt-text">What made you smile today?</p>
+            </div>
+
+            <div class="mood-section">
+                <label>How are you feeling today?</label>
+                <div class="mood-options">
+                    <button class="mood-btn active" data-mood="happy">😊</button>
+                    <button class="mood-btn" data-mood="sad">😢</button>
+                    <button class="mood-btn" data-mood="excited">🤩</button>
+                    <button class="mood-btn" data-mood="calm">😌</button>
+                    <button class="mood-btn" data-mood="tired">😴</button>
+                    <button class="mood-btn" data-mood="anxious">😰</button>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <video id="videoElement" autoplay muted></video>
+                <div id="recordingIndicator" class="recording-indicator"></div>
+            </div>
+
+            <div class="button-container">
+                <button id="startBtn" class="action-btn">
+                    <span>🎥</span> Start Recording
+                </button>
+                <button id="stopBtn" class="action-btn stop" style="display: none;">
+                    <span>⏹️</span> Stop Recording
+                </button>
+            </div>
+        </div>
+
+        <div class="collection-section">
+            <h2 class="collection-title">
+                <span>📝</span> Your Memory Collection
+            </h2>
+
+            <div class="theme-section">
+                <label>Choose Theme:</label>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="pastel">Pastel</button>
+                    <button class="theme-btn" data-theme="sunset">Sunset</button>
+                    <button class="theme-btn" data-theme="forest">Forest</button>
+                </div>
+            </div>
+
+            <div id="videoCollection">
+                <div id="emptyCollection" class="empty-collection">
+                    <p style="font-size: 1.1rem;">You haven't recorded any memories yet! 🎬</p>
+                    <p>Start your first recording and build your collection.</p>
+                </div>
+                <div id="videoGrid" class="video-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Memories Captured - Capture your moments with joy! ✨</p>
+        <p style="margin-top: 5px;">Made with 💖 for your daily memories</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
